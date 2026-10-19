@@ -1,5 +1,7 @@
 # Kahve MVP — ürün, tasarım ve deneyim raporu
 
+> **Tarihsel başlangıç raporu ve ilk teslim kayıtları.** 19 Ekim tarihli ek UI/UX incelemesiyle güncel kapsam, kararlar, uygulama sırası ve kabul kapıları [aktif ürün ve tasarım yol haritasında](active-product-roadmap.md) birleştirildi. Aşağıdaki başlangıç bulguları ve eski “sıradaki iş” ifadeleri güncel iş sırasının yerine geçmez.
+
 **Tarih:** 19 Ekim 2026  
 **Hedef:** Mobilde hızlı sipariş, ödemede güven, işletmede hatasız operasyon.  
 **Kapsam:** Mevcut gel-al MVP'sini iyileştirmek. Abonelik iptal; kapsamlı tasarım editörü, dış şarkı kataloğu, Spotify/YouTube oynatma ve canlı müzik senkronizasyonu bu yol haritasına dahil değil.

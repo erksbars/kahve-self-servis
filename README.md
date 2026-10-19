@@ -36,7 +36,7 @@ Open the [customer menu](http://127.0.0.1:5187/b/demo-moda), [staff dashboard](h
 
 The API keeps pricing, payment confirmation and tenant authorization on the server. PostgreSQL transactions and an outbox keep verified payments connected to order processing. The web app handles discovery and interaction while server state remains authoritative.
 
-See the [architecture](docs/architecture.md), [payment state machine](docs/payment-state-machine.md), [current UX roadmap](docs/product-experience-roadmap-2026-10-19.md) and [song request flow](docs/music.md). Product screenshots use illustrative demo photography; menu prices and accounts are for local testing.
+See the [architecture](docs/architecture.md), [payment state machine](docs/payment-state-machine.md), [active product and UX roadmap](docs/active-product-roadmap.md) and [song request flow](docs/music.md). Product screenshots use illustrative demo photography; menu prices and accounts are for local testing.
 
 ## Türkçe kurulum ve operasyon
 
@@ -143,11 +143,11 @@ Windows'ta kurulu Edge kullanılabilir: `$env:E2E_BROWSER_CHANNEL='msedge'`, ard
 
 Backend testleri Testcontainers ile ayrı, geçici PostgreSQL başlatır; geliştirme veritabanına dokunmaz. Kapsam: işletme/şube ayrımı, public fiyatlar, rol/CSRF/oturum, sürüm çakışması, audit/FK, seçenek kuralları, checkout/webhook eşzamanlı tekrarları, imza/zaman/tutar kontrolü, snapshot, terminal durumlar, güvenli tracking ve outbox hata/retry. E2E testleri yerel demo DB'de örnek siparişler oluşturur; gerçek ödeme yapmaz.
 
-CI tanımı `.github/workflows/ci.yml` içindedir. Yerelde doğrulandı; uzak CI henüz çalıştırılmadı.
+CI tanımı `.github/workflows/ci.yml` içindedir. İlk yayın sürümü `99f8556` için [GitHub kontrolleri başarılı](https://github.com/erksbars/kahve-self-servis/actions/runs/39245924393). Yeni sürümlerin sonucu kendi kontrol kaydından değerlendirilmelidir.
 
 ## Sonraki adım
 
-Güncel tasarım, kullanıcı deneyimi, hata riskleri ve uygulama öncelikleri: [19 Ekim ürün ve deneyim yol haritası](docs/product-experience-roadmap-2026-10-19.md). Abonelik ve dış müzik katalog/oynatıcı entegrasyonları kapsam dışıdır.
+Güncel tasarım, kullanıcı deneyimi, hata riskleri ve uygulama öncelikleri: [aktif ürün ve tasarım yol haritası](docs/active-product-roadmap.md). [19 Ekim başlangıç raporu](docs/product-experience-roadmap-2026-10-19.md) önceki bulguların ve teslimlerin tarihsel kaydıdır. Abonelik ve dış müzik katalog/oynatıcı entegrasyonları kapsam dışıdır.
 
 iyzico ve kahveci başına ayrı hesap modeliyle sandbox checkout/callback/uzlaştırma tamamlandı. Hesap ve callback için [yerel kurulum adımları](docs/iyzico-setup.md).
 

@@ -1,6 +1,6 @@
 # Premium menü ve metin tabanlı müzik önerileri yol haritası
 
-> Tarihsel plan. Güncel öncelikler [19 Ekim ürün/deneyim raporundadır](product-experience-roadmap-2026-10-19.md). Abonelik iptal edildi; dış şarkı kataloğu ve müzik oynatma kapsam dışı. Güncel müzik özelliği yalnızca siparişe bağlı metin isteğidir: [akış](music.md). Aşağıdaki eski kapsam maddeleri aktif iş yetkisi değildir.
+> Tarihsel plan. Güncel öncelikler [aktif ürün ve tasarım yol haritasındadır](active-product-roadmap.md). Abonelik iptal edildi; dış şarkı kataloğu ve müzik oynatma kapsam dışı. Güncel müzik özelliği yalnızca siparişe bağlı metin isteğidir: [akış](music.md). Aşağıdaki eski kapsam maddeleri aktif iş yetkisi değildir.
 
 Güncelleme: 15 Ekim 2026. Görsel altyapısı, 6 kategoride 24 görselli ürün ve responsive müşteri menüsü hazır. PostgreSQL metin şarkı modülünün ilk sürümü uygulandı: demo işletme başına 49 şarkı, şubeye özel havuz, menüden sipariş/ödeme gerektirmeyen öneri ve Owner yönetimi. Güncel giriş noktası “Sıraya bir şarkı bırak” düğmesidir; ilk taslaktaki ödeme koşulu kullanıcı kararıyla kaldırıldı. Takip/ödeme ekranlarının premium tasarım güncellemesi tamamlandı. Katalog içe aktarma/raporlama ve PWA/yayına hazırlık sonraki dilimlerdir. Abonelik ve kapsamlı tasarım özelleştirmesi, kullanıcı kararıyla ayrı sonraki aşamada değerlendirilecek: [not](future-subscription.md).
 

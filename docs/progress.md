@@ -266,3 +266,12 @@ Doğrulama: 5 backend müzik entegrasyonu ve 15 tarayıcı testi başarılı. Ye
 
 Sonraki ana iş: sepette ürün seçeneklerini düzenleme, ardından hero/keşif ve kalan demo/canlı ayrımı/pilot hazırlığı. Abonelik ve dış müzik entegrasyonları kapsam dışı. Güncel kullanım docs/music.md, yol haritası docs/product-experience-roadmap-2026-10-19.md.
 
+## Birleştirilmiş ürün ve tasarım planı — 19 Ekim 2026
+
+Kullanıcının dış UI/UX raporu güncel kaynakla karşılaştırıldı; uygulama kodu değiştirilmedi. Aktif karar kaynağı [ürün ve tasarım yol haritası](active-product-roadmap.md) oldu; README ve eski rapor girişleri bu belgeye yönlendirildi. Mevcut çalışan işlevler yeniden yapılacaklardan ayrıldı; rapordaki M01–M18 yeni paketlerle eşlendi.
+
+Sıra: başlangıç kanıtı → sepet toplam sınırı ve toparlanma → kompakt işletme/şube alanı ve keşif → kart/tasarım sistemi → atomik sepet düzenleme ve kalem fiyat onayı → gerçek cihaz/dayanıklılık. Hafif logo/kapak/palet ayrı isteğe bağlı paket, gerçek ücretli pilot ise ayrı yayın/ödeme operasyonu kapısına bağlı. Abonelik, dış müzik ve kapsamlı tasarım editörü kapsam dışında.
+
+Ek kaynak bulguları: yerel sepetin yüklemede toplam sınırını aşabilmesi, opsiyonel tek seçimi kaldıramama, zorunlu ücretli seçenekte kart alt fiyatının doğruluğu, toplam sabitken kalem fiyatının değişmesi, kaldırılan seçenek/modal state ve tipli hata sözleşmesi. Bunlar uygulanmış düzeltme değil, planlanmış işlerdir.
+
+Başlangıç kanıtı: `99f8556` için 102 backend/12 frontend testi ve web derlemesi yerelde başarılı; GitHub foundation-checks sonucu success. Bu doküman paketinde yeni cihaz/performans testi veya ürün kodu değişikliği yapılmadı. Doküman bağlantıları ve diff kapsamı kontrol edildi.
