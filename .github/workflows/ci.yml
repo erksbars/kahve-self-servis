@@ -1,0 +1,31 @@
+name: foundation-checks
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: dotnet tool restore
+      - run: dotnet test Kahve.slnx --verbosity minimal
+      - run: npm ci
+        working-directory: apps/web
+      - run: npm test && npm run build
+        working-directory: apps/web
+      - name: Start local demo stack
+        run: |
+          printf 'POSTGRES_PASSWORD=%s\nDEMO_PASSWORD=%s\nPAYMENT_WEBHOOK_SECRET=%s\nTRACKING_ENCRYPTION_KEY=%s\n' "$(openssl rand -hex 24)" "$(openssl rand -hex 16)" "$(openssl rand -hex 32)" "$(openssl rand -hex 32)" > .env
+          docker compose up -d --build --wait
+      - run: npx playwright install --with-deps chromium
+        working-directory: apps/web
+      - run: npm run test:e2e
+        working-directory: apps/web
+      - if: always()
+        run: docker compose down

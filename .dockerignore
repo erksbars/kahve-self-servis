@@ -1,0 +1,8 @@
+.git
+.env
+**/catalog-images/
+**/node_modules
+**/bin
+**/obj
+**/dist
+**/test-results

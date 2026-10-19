@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/dist/
+.env
+.env.*
+!.env.example
+**/TestResults/
+**/playwright-report/
+**/test-results/
+.vs/
+/.local/
+**/catalog-images/
+**/__pycache__/
+*.pyc

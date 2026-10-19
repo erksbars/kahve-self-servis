@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/services/" />
+  <Folder Name="/services/api/">
+    <Project Path="services/api/Kahve.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/api-tests/">
+    <Project Path="tests/api-tests/Kahve.Api.Tests.csproj" />
+  </Folder>
+</Solution>

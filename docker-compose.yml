@@ -1,0 +1,58 @@
+name: kahve-mvp
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: kahve
+      POSTGRES_USER: kahve
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kahve -d kahve"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  api:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Database: Host=db;Database=kahve;Username=kahve;Password=${POSTGRES_PASSWORD}
+      Database__MigrateOnStartup: "true"
+      Demo__Enabled: "true"
+      Demo__Password: ${DEMO_PASSWORD:?Set DEMO_PASSWORD in .env}
+      Sandbox__Enabled: "true"
+      Payments__Provider: ${PAYMENTS_PROVIDER:-sandbox}
+      Payments__WebhookSecret: ${PAYMENT_WEBHOOK_SECRET:?Set PAYMENT_WEBHOOK_SECRET in .env}
+      Tracking__EncryptionKey: ${TRACKING_ENCRYPTION_KEY:?Set TRACKING_ENCRYPTION_KEY in .env}
+      CatalogImages__Root: /data/catalog-images
+    volumes:
+      - catalog-images:/data/catalog-images
+    ports:
+      - "127.0.0.1:${API_PORT:-5087}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "127.0.0.1:${WEB_PORT:-5187}:80"
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/api/health"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  postgres-data:
+  catalog-images:
